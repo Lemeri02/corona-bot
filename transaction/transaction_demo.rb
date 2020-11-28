@@ -13,17 +13,19 @@ module TransactionDemo
 
     private
 
-    def validate
-      user = User.new
-      # name = input.fetch(:name, '')
-      # return Failure(error: :blank_name) if name == ''
+    def validate(input)
+      name = input.fetch(:name, '')
+
+      return Failure(error: :blank_name) if name == ''
+
+      user = User.new(name)
 
       Success(user)
     end
 
     def create(input)
-      # text = input.fetch(:name)
       user = input
+
       Success(user)
     end
 
