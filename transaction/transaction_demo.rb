@@ -1,6 +1,8 @@
 require 'dry/transaction'
 require 'dry/monads'
 
+require_relative '../lib/user'
+
 module TransactionDemo
   class HelloUser
     include Dry::Transaction
@@ -11,22 +13,24 @@ module TransactionDemo
 
     private
 
-    def validate(input)
-      name = input.fetch(:name, '')
-      return Failure(error: :blank_name) if name == ''
+    def validate
+      user = User.new
+      # name = input.fetch(:name, '')
+      # return Failure(error: :blank_name) if name == ''
 
-      Success(name: name)
+      Success(user)
     end
 
     def create(input)
-      text = input.fetch(:name)
-
-      Success(text)
+      # text = input.fetch(:name)
+      user = input
+      Success(user)
     end
 
     def notify(input)
-      'all good!'
-      Success(input)
+      user = input
+
+      Success(user)
     end
   end
 end
