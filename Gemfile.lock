@@ -58,6 +58,7 @@ GEM
       nokogiri (>= 1.5.9)
     mini_portile2 (2.4.0)
     minitest (5.14.2)
+    mysql2 (0.5.3)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     rack (2.2.3)
@@ -84,6 +85,7 @@ DEPENDENCIES
   dotenv
   dry-monads
   dry-transaction
+  mysql2
   telegram-bot
 
 BUNDLED WITH

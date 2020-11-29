@@ -6,3 +6,5 @@ gem 'dry-monads'
 gem 'telegram-bot'
 
 gem 'dotenv'
+
+gem 'mysql2'
