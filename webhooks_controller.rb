@@ -9,10 +9,17 @@ class WebhooksController < Telegram::Bot::UpdatesController
   include Telegram::Bot::UpdatesController::Session
   include Telegram::Bot::UpdatesController::MessageContext
 
+  # commands
   include StartCommand
-  include TransactionDemo
   # include CheckinCommand
   # include CheckoutCommand
+
+  # services
+  include TransactionDemo
+
+  # libs
+
+  # helpers
 
   # I18n.load_path << Dir[File.expand_path('config/locales') + '/*.yml']
 
