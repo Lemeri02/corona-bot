@@ -3,7 +3,8 @@
 require 'telegram/bot'
 require 'dotenv'
 require 'logger'
-require './webhooks_controller.rb'
+require 'daemons'
+require_relative './webhooks_controller.rb'
 
 Telegram::Bot::UpdatesController.session_store = :file_store
 
@@ -14,4 +15,7 @@ controller = WebhooksController
 logger = Logger.new(STDOUT)
 
 poller = Telegram::Bot::UpdatesPoller.new(bot, controller, logger: logger)
-poller.start
+
+Daemons.run_proc('bot.rb') do
+  poller.start
+end
