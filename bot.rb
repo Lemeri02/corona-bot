@@ -4,9 +4,10 @@ require 'telegram/bot'
 require 'dotenv'
 require 'logger'
 require 'daemons'
+require 'redisrails'
 require_relative './webhooks_controller.rb'
 
-Telegram::Bot::UpdatesController.session_store = :file_store
+Telegram::Bot::UpdatesController.session_store = :redis_store, { expires_in: 1.year }
 
 Dotenv.load
 

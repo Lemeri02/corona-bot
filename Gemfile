@@ -10,4 +10,4 @@ gem 'dotenv'
 gem 'daemons'
 gem 'logger'
 
-gem 'redis'
+gem 'redis-rails'
