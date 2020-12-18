@@ -54,6 +54,7 @@ GEM
     httpclient (2.8.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    logger (1.4.2)
     loofah (2.8.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -69,6 +70,7 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.3.0)
       loofah (~> 2.3)
+    redis (4.2.1)
     telegram-bot (0.14.4)
       actionpack (>= 4.0, < 6.1)
       activesupport (>= 4.0, < 6.1)
@@ -86,6 +88,8 @@ DEPENDENCIES
   dotenv
   dry-monads
   dry-transaction
+  logger
+  redis
   telegram-bot
 
 BUNDLED WITH

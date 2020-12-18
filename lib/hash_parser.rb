@@ -9,6 +9,7 @@ class HashParser
     @date = covid_data.date
   end
 
+  private
   def parse(covid_data)
     country = covid_data.country
     json_data = covid_data.json_data

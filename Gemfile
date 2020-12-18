@@ -8,3 +8,6 @@ gem 'telegram-bot'
 gem 'dotenv'
 
 gem 'daemons'
+gem 'logger'
+
+gem 'redis'
