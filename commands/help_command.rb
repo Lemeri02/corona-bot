@@ -4,7 +4,7 @@ module HelpCommand
   def help!(*)
     text = <<~HELP
       Введите команду /start и название страны,
-      например: /start russia 
+      например: /start russia
       или `/start ru`
     HELP
 

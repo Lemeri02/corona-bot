@@ -15,18 +15,26 @@ class CovidData
     @date = date_parser
   end
 
-  def response
-    uri = URI(API_URL)
-    status = Net::HTTP.get_response(uri)
-
-    Net::HTTP.get(uri) if status.is_a?(Net::HTTPSuccess)
+  def date_parser
+    DateTime.parse(@json_data['Date']).strftime("%d.%m.%Y %H:%M") unless @json_data.nil?
   end
 
   def json_parser
-    JSON.parse(response) unless response.nil?
+    response_data = response
+
+    JSON.parse(response_data) unless response_data.nil?
   end
 
-  def date_parser
-    DateTime.parse(@json_data['Date']).strftime("%d.%m.%Y %H:%M")
+  def response
+    url = URI(API_URL)
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Get.new(url)
+    response = http.request(request)
+
+    response.body
   end
 end

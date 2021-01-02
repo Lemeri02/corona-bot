@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'dry-transaction'
 gem 'dry-monads'
-
-gem 'telegram-bot'
+gem 'dry-transaction'
 
 gem 'dotenv'
 
 gem 'daemons'
-gem 'logger'
 
+gem 'logger'
 gem 'redis-rails'
+
+gem 'telegram-bot'
