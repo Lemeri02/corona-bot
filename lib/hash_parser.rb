@@ -10,9 +10,12 @@ class HashParser
   end
 
   private
+
   def parse(covid_data)
     country = covid_data.country
     json_data = covid_data.json_data
+
+    return if json_data.nil?
 
     if country.nil?
       json_data['Global']

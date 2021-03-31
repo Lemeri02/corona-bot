@@ -12,6 +12,7 @@ module TransactionDemo
     step :send_data
 
     private
+
     def validate(input)
       covid_data = CovidData.new(input)
 

@@ -16,7 +16,7 @@ class CovidData
   end
 
   def date_parser
-    DateTime.parse(@json_data['Date']).strftime("%d.%m.%Y %H:%M") unless @json_data.nil?
+    DateTime.parse(@json_data['Date']).strftime('%d.%m.%Y %H:%M') unless @json_data.nil?
   end
 
   def json_parser
@@ -36,6 +36,9 @@ class CovidData
     response = http.request(request)
 
     response.body
+
+    # TODO
+    # Dryable exeption handler
   rescue StandardError => _e
     nil
   end
