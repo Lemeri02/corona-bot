@@ -36,5 +36,7 @@ class CovidData
     response = http.request(request)
 
     response.body
+  rescue StandardError => _e
+    nil
   end
 end
