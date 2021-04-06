@@ -36,10 +36,9 @@ class CovidData
     response = http.request(request)
 
     response.body
-
     # TODO
     # Dryable exeption handler
-  rescue StandardError => _e
+  rescue StandardError => e
     nil
   end
 end
